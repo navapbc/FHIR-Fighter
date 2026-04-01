@@ -1,11 +1,9 @@
-General disclaimer This repository was created for use by CDC programs to collaborate on public health related projects in support of the CDC mission. GitHub is not hosted by the CDC, but is a third party website used by CDC and its partners to share information and collaborate on software. CDC use of GitHub does not imply an endorsement of any one particular service, product, or enterprise.
-
 # Overview
 
-The PRIME FHIR Converter is a Java-based library, written in Kotlin, and created as part of the CDC’s Pandemic-Ready
+FHIR-Fighter is a Java-based library, written in Kotlin, and was created as part of the CDC’s Pandemic-Ready
 Interoperability Modernization Effort (PRIME). This library contains various utilities to manipulate FHIR data, most
 notably a configurable FHIR to HL7 v2 conversion utility. This library is currently used by the 
-[CDC’s ReportStream](https://github.com/CDCgov/prime-data-hub) project to support the delivery of Electronic 
+[CDC’s ReportStream](https://github.com/CDCgov/prime-reportstream) project to support the delivery of Electronic 
 Laboratory Reporting (ELR) messages to public health agencies (PHAs) that can only ingest HL7 v2 and not FHIR.
 
 We believe this library can increase FHIR adoption within health IT ecosystems by supporting a modular 
@@ -15,14 +13,14 @@ to HL7 v2 for use in legacy systems.
 # Usage
 ## Adding to Your Project
 This Java-based library has not yet been published to a binary repository. To use it in your application, you can download
-the lastest JAR file from the [releases](https://github.com/CDCgov/prime-fhir-converter/releases) or include
+the lastest JAR file from the [releases](https://github.com/navapbc/FHIR-Fighter/releases) or include
 the library as part of your Gradle build scripts as follows:
 
 In your `settings.gradle.kts` or `settings.gradle` add this repository as a source (note this feature requires 
 Gradle 4.10 or higher)
 ```groovy
 sourceControl {
-    gitRepository(java.net.URI("https://github.com/CDCgov/prime-fhir-converter.git")) {
+    gitRepository(java.net.URI("https://github.com/navapbc/FHIR-Fighter.git")) {
         producesModule("gov.cdc.prime:prime-fhir-converter")
     }
 }
@@ -82,9 +80,8 @@ println(hl7Message.encode())
 ```
 
 ## HL7 v2 to FHIR Conversion
-An HL7 v2 to FHIR converter is not included as part of this library, but the CDC ReportStream project uses the 
-[Linux4Health Hl7 v2 to FHIR converter library](https://github.com/LinuxForHealth/hl7v2-fhir-converter) to convert
-HL7 v2 to FHIR. You can find
+An HL7 v2 to FHIR converter is not included as part of this library, but this library was designed to work in tandem with [FHIR-Starter](https://github.com/navapbc/FHIR-Starter) to convert
+HL7 v2 to FHIR. FHIR-Starter is based on the [Linux4Health Hl7 v2 to FHIR converter library](https://github.com/LinuxForHealth/hl7v2-fhir-converter). You can find
 a [sample implementation](https://github.com/CDCgov/prime-reportstream/blob/master/prime-router/src/main/kotlin/fhirengine/translation/HL7toFhirTranslator.kt) and 
 [conversion configuration](https://github.com/CDCgov/prime-reportstream/tree/master/prime-router/metadata/fhir_mapping)
 for ORU R01 in the [ReportStream repository](https://github.com/CDCgov/prime-reportstream). 
@@ -94,14 +91,8 @@ This library contains extensions to the FHIR Path functions that are used to fac
 FHIR to HL7 v2, but can be used on their own for other purposes. See
 [FHIR Path Custom Functions](docs/fhir-path-custom-functions.md)
 
-## Future Functionality in v1.0
-More features are coming in the near future, including support in the FHIR to HL7 v2 converter for any message type
-or version supported by the HAPI HL7 v2 library, as well as a FHIR transform utility to manipulate the data in 
-a FHIR bundle to enrich or fix its data. Set a [Watch](https://docs.github.com/en/rest/activity/watching) on this
-repository to stay up-to-date with changes to this library.
-
 # Building
-To build the library, you need to have installed a Java JDK 11 or higher and run the command
+To build the library, you need to have installed a Java JDK 17 or higher and run the command
 ```bash
 ./gradlew build
 ```
@@ -116,16 +107,6 @@ The resulting JAR will be in the `build/libs` folder
 * [Contribution Notice](CONTRIBUTING.md)
 * [Development's Guide](DEVELOPMENT.md)
 * [CI/CD Workflows](.github/workflows/README.md)
-* [Code of Conduct](code-of-conduct.md)
- 
-## Public Domain Standard Notice
-This repository constitutes a work of the United States Government and is not
-subject to domestic copyright protection under 17 USC § 105. This repository is in
-the public domain within the United States, and copyright and related rights in
-the work worldwide are waived through the [CC0 1.0 Universal public domain dedication](https://creativecommons.org/publicdomain/zero/1.0/).
-All contributions to this repository will be released under the CC0 dedication. By
-submitting a pull request you are agreeing to comply with this waiver of
-copyright interest.
 
 ## License Standard Notice
 The repository utilizes code licensed under the terms of the Apache Software
@@ -144,13 +125,6 @@ program. If not, see http://www.apache.org/licenses/LICENSE-2.0.html
 
 The source code forked from other open source projects will inherit its license.
 
-## Privacy Standard Notice
-This repository contains only non-sensitive, publicly available data and
-information. All material and community participation is covered by the
-[Disclaimer](https://github.com/CDCgov/template/blob/master/DISCLAIMER.md)
-and [Code of Conduct](https://github.com/CDCgov/template/blob/master/code-of-conduct.md).
-For more information about CDC's privacy policy, please visit [http://www.cdc.gov/other/privacy.html](https://www.cdc.gov/other/privacy.html).
-
 ## Contributing Standard Notice
 Anyone is encouraged to contribute to the repository by [forking](https://help.github.com/articles/fork-a-repo)
 and submitting a pull request. (If you are new to GitHub, you might start with a
@@ -159,17 +133,3 @@ to this project, you grant a world-wide, royalty-free, perpetual, irrevocable,
 non-exclusive, transferable license to all users under the terms of the
 [Apache Software License v2](http://www.apache.org/licenses/LICENSE-2.0.html) or
 later.
-
-All comments, messages, pull requests, and other submissions received through
-CDC including this GitHub page may be subject to applicable federal law, including but not limited to the Federal Records Act, and may be archived. Learn more at [http://www.cdc.gov/other/privacy.html](http://www.cdc.gov/other/privacy.html).
-
-## Records Management Standard Notice
-This repository is not a source of government records, but is a copy to increase
-collaboration and collaborative potential. All government records will be
-published through the [CDC web site](http://www.cdc.gov).
-
-## Additional Standard Notices
-Please refer to [CDC's Template Repository](https://github.com/CDCgov/template)
-for more information about [contributing to this repository](https://github.com/CDCgov/template/blob/master/CONTRIBUTING.md),
-[public domain notices and disclaimers](https://github.com/CDCgov/template/blob/master/DISCLAIMER.md),
-and [code of conduct](https://github.com/CDCgov/template/blob/master/code-of-conduct.md).
