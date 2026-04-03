@@ -570,20 +570,20 @@ jobs:
           \`\`\`kotlin
           repositories {
               maven {
-                  url = uri("https://github.com/CDCgov/prime-fhir-converter/releases/download/v${VERSION}/")
+                  url = uri("https://github.com/navapbc/FHIR-fighter/releases/download/v${VERSION}/")
               }
           }
 
           dependencies {
-              implementation("gov.cdc.prime:prime-fhir-converter:${VERSION}")
+              implementation("com.nava.prime:fhir-fighter:${VERSION}")
           }
           \`\`\`
 
           **Maven**:
           \`\`\`xml
           <dependency>
-              <groupId>gov.cdc.prime</groupId>
-              <artifactId>fhirconverter</artifactId>
+              <groupId>com.nava.prime</groupId>
+              <artifactId>fhir-fighter</artifactId>
               <version>${VERSION}</version>
           </dependency>
           \`\`\`
