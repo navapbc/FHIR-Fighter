@@ -21,18 +21,18 @@ Gradle 4.10 or higher)
 ```groovy
 sourceControl {
     gitRepository(java.net.URI("https://github.com/navapbc/FHIR-Fighter.git")) {
-        producesModule("gov.cdc.prime:prime-fhir-converter")
+        producesModule("com.nava.prime:fhir-fighter")
     }
 }
 ```
 
 Add the dependency to your `build.gradle.kts` 
 ```kotlin
-implementation("gov.cdc.prime:prime-fhir-converter:0.1")
+implementation("com.nava.prime:fhir-fighter:v1.0.0")
 ```
 or your `build.gradle` file
 ```groovy
-implementation 'gov.cdc.prime:prime-fhir-converter:0.1'
+implementation 'com.nava.prime:fhir-fighter:v1.0.0'
 ```
 
 ## FHIR to HL7 v2 Conversion
@@ -42,7 +42,7 @@ and converts the data to an HL7 v2 message per the a provided
 [configuration schema](docs/fhir-hl7v2-converter/configuration.md). A configuration schema is a very flexible list 
 of rules on how build an HL7 v2 message from a FHIR bundle which specifies the type and version of HL7 v2 message
 to generate as well as how to extract and translate the FHIR data into HL7 v2 fields. 
-[A base configuration](src/main/resources/hl7_mapping/ORU_R01) that can
+[A base configuration](src/main/resources/metadata/hl7_mapping/ORU_R01) that can
 be extended is provided in the library which follows the 
 [HL7 v2 to FHIR Mapping Implementation Guide](https://build.fhir.org/ig/HL7/v2-to-fhir/index.html) for 
 converting a FHIR bundle to an HL7 v2 ORU R01 observation message. 
@@ -82,8 +82,8 @@ println(hl7Message.encode())
 ## HL7 v2 to FHIR Conversion
 An HL7 v2 to FHIR converter is not included as part of this library, but this library was designed to work in tandem with [FHIR-Starter](https://github.com/navapbc/FHIR-Starter) to convert
 HL7 v2 to FHIR. FHIR-Starter is based on the [Linux4Health Hl7 v2 to FHIR converter library](https://github.com/LinuxForHealth/hl7v2-fhir-converter). You can find
-a [sample implementation](https://github.com/CDCgov/prime-reportstream/blob/master/prime-router/src/main/kotlin/fhirengine/translation/HL7toFhirTranslator.kt) and 
-[conversion configuration](https://github.com/CDCgov/prime-reportstream/tree/master/prime-router/metadata/fhir_mapping)
+a [sample implementation](https://github.com/CDCgov/prime-reportstream/blob/main/prime-router/src/main/kotlin/fhirengine/translation/HL7toFhirTranslator.kt) and 
+[conversion configuration](https://github.com/CDCgov/prime-reportstream/tree/main/prime-router/metadata/HL7/catchall)
 for ORU R01 in the [ReportStream repository](https://github.com/CDCgov/prime-reportstream). 
 
 ## Extended FHIR Path Evaluation Utilities

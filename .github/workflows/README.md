@@ -154,8 +154,8 @@ Validates the version input before proceeding:
 - Runs Kotlin linting (`ktlintCheck`)
 - Compiles code with version override: `-Pversion=$VERSION`
 - Creates JAR artifacts:
-  - Main JAR: `prime-fhir-converter-{version}.jar`
-  - Shadow JAR: `prime-fhir-converter-{version}-all.jar` (with dependencies)
+  - Main JAR: `fhir-fighter-{version}.jar`
+  - Shadow JAR: `fhir-fighter-{version}-all.jar` (with dependencies)
 - Uploads JARs and build outputs for downstream jobs
 - Build outputs (`build/classes/`, `.gradle/`) uploaded for reuse
 
@@ -371,8 +371,8 @@ Stored in workflow run with specified retention:
 
 Attached to GitHub Release, permanent storage
 
-- `prime-fhir-converter-{version}.jar`: Main JAR
-- `prime-fhir-converter-{version}-all.jar`: Fat JAR
+- `fhir-fighter-{version}.jar`: Main JAR
+- `fhir-fighter-{version}-all.jar`: Fat JAR
 
 ### Security Reports
 
