@@ -28,11 +28,11 @@ sourceControl {
 
 Add the dependency to your `build.gradle.kts` 
 ```kotlin
-implementation("com.nava.prime:fhir-fighter:v1.0.0")
+implementation("com.nava.prime:fhir-fighter:2.0.0")
 ```
 or your `build.gradle` file
 ```groovy
-implementation 'com.nava.prime:fhir-fighter:v1.0.0'
+implementation 'com.nava.prime:fhir-fighter:2.0.0'
 ```
 
 ## FHIR to HL7 v2 Conversion

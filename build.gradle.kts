@@ -1,5 +1,5 @@
 group = "com.nava.prime"
-version = project.findProperty("version") as String? ?: "1.0.0-SNAPSHOT"
+version = project.findProperty("version") as String? ?: "2.0.0-SNAPSHOT"
 
 plugins {
     id("org.jetbrains.kotlin.jvm") version "1.8.10"
