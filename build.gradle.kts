@@ -1,4 +1,4 @@
-group = "gov.cdc.prime"
+group = "com.nava.prime"
 version = project.findProperty("version") as String? ?: "1.0.0-SNAPSHOT"
 
 plugins {
@@ -61,9 +61,9 @@ repositories {
 
 publishing {
     publications {
-        create<MavenPublication>("prime-fhirconverter") {
-            groupId = "gov.cdc.prime"
-            artifactId = "fhirconverter"
+        create<MavenPublication>("prime-fhirfighter") {
+            groupId = "com.nava.prime"
+            artifactId = "fhir-fighter"
             version = "1.0.0-SNAPSHOT"
 
             from(components["java"])

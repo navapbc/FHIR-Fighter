@@ -60,7 +60,7 @@ Element properties (in order of execution):
   another element may have populated, so it could be used to check the result of a
   previous element (elements must be kept in the correct order for this to work).
 - `bundleProperty` - a FHIR Path expression that denotes where to store the value. If the property does not yet exist,
-  PRIME FHIR Converter will attempt to create it, though there are restrictions around which types of resources/properties can
+  FHIR Fighter will attempt to create it, though there are restrictions around which types of resources/properties can
   be dynamically created.
 - `value` - a list of FHIR Path expressions that evaluates to the proper FHIR Type to be
   assigned to the property specified in the `bundleProperty` element property. The first expression to

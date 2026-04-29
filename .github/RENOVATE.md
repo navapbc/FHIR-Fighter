@@ -13,7 +13,7 @@ This repository uses Renovate Bot for automated dependency updates with SHA256 c
 3. Select your organization or account
 4. Choose repositories:
    - Select "Only select repositories"
-   - Choose `prime-fhir-converter`
+   - Choose `fhir-fighter`
 5. Click "Install" or "Save"
 
 ### Step 2: Verify Configuration

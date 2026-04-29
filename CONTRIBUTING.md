@@ -1,11 +1,11 @@
 # Welcome!
-Thank you for contributing to Open Source projects! If you have any
+Thank you for contributing to open source projects! If you have any
 questions or doubts, don't be afraid to send them our way. We appreciate all
 contributions, and we are looking forward to fostering an open, transparent, and
 collaborative environment.
 
 Before contributing, we encourage you to also read our
-[README](https://github.com/CDCgov/template/blob/master/README.md).
+[README](https://github.com/navapbc/FHIR-Fighter/blob/main/README.md).
 
 ## Requesting Changes
 Our pull request/merging process is designed to give Nava an opportunity to consider and discuss any suggested

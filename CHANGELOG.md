@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to the PRIME FHIR Converter will be documented in this file.
+All notable changes to FHIR Fighter will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/).
 
