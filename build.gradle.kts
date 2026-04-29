@@ -1,5 +1,5 @@
 group = "com.nava.prime"
-version = project.findProperty("version") as String? ?: "1.0.0-SNAPSHOT"
+version = project.findProperty("version") as String? ?: "2.0.0-SNAPSHOT"
 
 plugins {
     id("org.jetbrains.kotlin.jvm") version "1.8.10"
@@ -64,7 +64,7 @@ publishing {
         create<MavenPublication>("prime-fhirfighter") {
             groupId = "com.nava.prime"
             artifactId = "fhir-fighter"
-            version = "1.0.0-SNAPSHOT"
+            version = "2.0.0"
 
             from(components["java"])
         }
