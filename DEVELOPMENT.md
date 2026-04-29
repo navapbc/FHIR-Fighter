@@ -36,7 +36,7 @@ Identify the FHIR resource elements that map to the segments and fields of the H
 
 ### Modify an existing test when add new feature
 
-Modify an existing test in [src/test/kotlin/com/nava/prime/fhirconverter/translation/hl7](https://github.com/navapbc/FHIR-Fighter/tree/main/src/test/kotlin/com/nava/prime/fhirconverter/translation/hl7) to test the new FHIR resource element. As an example, see  [FhirToHl7ConverterTests.kt](https://github.com/navapbc/FHIR-Fighter/blob/main/src/test/kotlin/com/nava/prime/fhirconverter/translation/hl7/FhirToHl7ConverterTests.kt), which tests FHIR resource element conversion to HL7 field.  The developer can add more unit tests to the file when a new FHIR resource element needs to be tested.
+Modify an existing test in [src/test/kotlin/com/nava/prime/fhirfighter/translation/hl7](https://github.com/navapbc/FHIR-Fighter/tree/main/src/test/kotlin/com/nava/prime/fhirfighter/translation/hl7) to test the new FHIR resource element. As an example, see  [FhirToHl7ConverterTests.kt](https://github.com/navapbc/FHIR-Fighter/blob/main/src/test/kotlin/com/nava/prime/fhirfighter/translation/hl7/FhirToHl7ConverterTests.kt), which tests FHIR resource element conversion to HL7 field.  The developer can add more unit tests to the file when a new FHIR resource element needs to be tested.
 
 ## Adding a New Configuration Schema to generate a new Message Type from given FHIR resource.
 
@@ -44,14 +44,14 @@ Modify an existing test in [src/test/kotlin/com/nava/prime/fhirconverter/transla
 To add a new configuration schema, a developer creates a file named after the message type (e.g., ADT_A01.yml) and reuses content from an existing configuration file.  The existing configuration is in [src/main/resources/hl7_mapping/ORU_R01](https://github.com/navapbc/FHIR-Fighter/tree/main/src/main/resources/hl7_mapping/ORU_R01). A good example is [src/main/resources/hl7_mapping/ORU_R01/ORU_R01-base.yml](https://github.com/navapbc/FHIR-Fighter/blob/main/src/main/resources/metadata/hl7_mapping/ORU_R01/ORU_R01-base.yml), which processes the ORU_R01 message.  [CONFIGURATION](https://github.com/navapbc/FHIR-Fighter/blob/main/docs/fhir-hl7v2-converter/configuration.md) explains how to configure the schema to support a new message type to map a FHIR resource to an HL7v2 field segment.  A developer should reuse an existing schema and only create new templates if needed.
 
 ### Test the new configuration schema mapping for the HL7v2 message segment field assertions
-Add a directory to the test resources schema directory, src/main/test/resources/schema, to test the new configuration schema. Next, a developer needs to add unit tests to verify that the new HL7v2 segment field is generated. As an example, see [FhirToHl7ConverterTests.kt](https://github.com/navapbc/FHIR-Fighter/blob/main/src/test/kotlin/com/nava/prime/fhirconverter/translation/hl7/FhirToHl7ConverterTests.kt) copy and create a new unit test if needed.
+Add a directory to the test resources schema directory, src/main/test/resources/schema, to test the new configuration schema. Next, a developer needs to add unit tests to verify that the new HL7v2 segment field is generated. As an example, see [FhirToHl7ConverterTests.kt](https://github.com/navapbc/FHIR-Fighter/blob/main/src/test/kotlin/com/nava/prime/fhirfighter/translation/hl7/FhirToHl7ConverterTests.kt) copy and create a new unit test if needed.
 
 Unit Tests are vital to help check new function, and also ensure that an added function does not break when other later function is added.
 
 ## Example of Unit Test to test the New Configuration Schema to Support a New HL7v2 Message Type
 
 ### Example of a Unit Test Case
-The example below demonstrates a Unit test case for setting the HL7 value using ConverterSchemaElement.  The example below can be found in [FhirToHl7ConverterTests.kt](https://github.com/navapbc/FHIR-Fighter/blob/main/src/test/kotlin/com/nava/prime/fhirconverter/translation/hl7/FhirToHl7ConverterTests.kt).
+The example below demonstrates a Unit test case for setting the HL7 value using ConverterSchemaElement.  The example below can be found in [FhirToHl7ConverterTests.kt](https://github.com/navapbc/FHIR-Fighter/blob/main/src/test/kotlin/com/nava/prime/fhirfighter/translation/hl7/FhirToHl7ConverterTests.kt).
 
 ```java
 class FhirToHl7ConverterTests {
@@ -118,7 +118,7 @@ The learning curve can feel steep for a new developer. Suggestions for "ramping 
 1.	Clone the [FHIR-Fighter](https://github.com/navapbc/FHIR-Fighter) project.
 2.	Set up your environment for Kotlin development. You can use VS Code or IntelliJ IDE.
 3.	Run the command `gradle clean build`. This will confirm that your libraries are set up correctly and that your development environment is working.
-4.	Select a unit test and run it. This will confirm your unit test setup is working. For example, you could try: [FhirToHl7ConverterTests.kt](https://github.com/navapbc/FHIR-Fighter/blob/main/src/test/kotlin/com/nava/prime/fhirconverter/translation/hl7/FhirToHl7ConverterTests.kt).
+4.	Select a unit test and run it. This will confirm your unit test setup is working. For example, you could try: [FhirToHl7ConverterTests.kt](https://github.com/navapbc/FHIR-Fighter/blob/main/src/test/kotlin/com/nava/prime/fhirfighter/translation/hl7/FhirToHl7ConverterTests.kt).
 5.	Set the IDE Project Setting to OpenJDK 17.
 6.	View the HL7v2 message created from the conversion in the test. The easiest way to do this is to put a breakpoint immediately after the command val message = FhirToHl7Converter(…).process(bundle), which returns an HL7v2 message.
 7.	Use the debugger to step through the asserts of the test. View the associated schema elements with the generated HL7 message segment.

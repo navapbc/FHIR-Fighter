@@ -2,7 +2,7 @@
 
 ## Overview
 
-This directory contains GitHub Actions workflows for automated versioning, building, testing, security scanning, and publishing of the FHIR Converter library.
+This directory contains GitHub Actions workflows for automated versioning, building, testing, security scanning, and publishing of the FHIR Fighter library.
 
 ## Workflows
 
